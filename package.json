@@ -1,0 +1,45 @@
+{
+    "private": true,
+    "theia": {
+        "frontend": {
+            "config": {
+                "applicationName": "Sapps Ide",
+                "preferences": {
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "@theia/callhierarchy": "next",
+        "@theia/file-search": "next",
+        "@theia/git": "next",
+        "@theia/markers": "next",
+        "@theia/messages": "next",
+        "@theia/navigator": "next",
+        "@theia/plugin-ext-vscode": "next",
+        "@theia/preferences": "next",
+        "@theia/preview": "next",
+        "@theia/search-in-workspace": "next",
+        "@theia/terminal": "next",
+        "@theia/vsx-registry": "next"
+    },
+    "devDependencies": {
+        "@theia/cli": "next"
+    },
+    "scripts": {
+      "prepare": "yarn run clean && yarn build && yarn run download:plugins",
+      "clean": "theia clean",
+      "build": "theia build --mode development",
+      "start": "theia start --plugins=local-dir:plugins",
+      "download:plugins": "theia download:plugins"
+    },
+    "theiaPluginsDir": "plugins",
+    "theiaPlugins": {
+        "vscode-rust-lang": "https://github.com/sappsdev/ide-extensions/raw/main/rust-lang.rust-0.7.8.vsix",
+        "vscode-rust-crates": "https://github.com/sappsdev/ide-extensions/raw/main/serayuzgur.crates-0.5.10.vsix",
+        "vscode-rust-crates-search": "https://open-vsx.org/api/belfz/search-crates-io/1.2.1/file/belfz.search-crates-io-1.2.1.vsix",
+        "vscode-rust-better-toml": "https://open-vsx.org/api/tamasfe/even-better-toml/0.14.2/file/tamasfe.even-better-toml-0.14.2.vsix",
+        "vscode-rust-syntax": "https://github.com/sappsdev/ide-extensions/raw/main/dustypomerleau.rust-syntax-0.6.0.vsix",
+        "vscode-rust-analyzer": "https://open-vsx.org/api/matklad/rust-analyzer/0.2.853/file/matklad.rust-analyzer-0.2.853.vsix"
+    }
+}
